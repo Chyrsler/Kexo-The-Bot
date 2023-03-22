@@ -3,11 +3,7 @@ PROJECT Made by Christopher Sebastian Hadeli
 Unfortunately school assignments have been a real weight lately. So as much as i love making a new project i have no choice but to continue the old one. 
 I've made some drastic updates to the program however and of course added the new theme "SUSTAINABLE LIFESTYLE"
 
-UPDATE LOG:
-(1) Placed the .text files in a seperate folder to tidy things up
-(2) Will scan the user for any missing files everytime they run the program, if a file is missing then a github link will be given (to download the whole thing again).
-(3) New additions to the old features such as new lesson, japanese words, etc regarding sustainable lifestyle
-(4) New features awaits!
+Not much to say this time around really, for a more in-depth explanation on what i added to this new version of the program, type in 'update' in the main menu command, enjoy!
 
 - Christopher
 

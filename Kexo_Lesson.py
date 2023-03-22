@@ -299,26 +299,23 @@ def LessonArt2(name, colour):
        .$$$'
       .$$'
       zP
-     z'
-""")
+     z'""")
     print(f"It is more expensive when it comes to price but it's only short-term. Because these brands designed so that the appliances will use 10-50% less energy compared to your usual electronic home appliances. {MessageContinue}")
     input()
 
     print("""
- _.,-----/=\-----,._
- (__ ~~~'''''''~~~ __)
-  | ~~~'''''''''~~~ |
-  | |  ; ,   , ;  | |
-  | |  | |   | |  | |
-  | |  | |   | |  | |
-  | |  | |   | |  | |
-  | |  | |   | |  | |
-  | |  | |   | |  | |
-  | |  | |   | |  | |
-  | |  | |   | |  | |
-  |. \_| |   | |_/ .|
-   `-,.__ ~~~ __.,-'
-""")
+        ________
+       /_______/|
+      | -----  ||   ,
+      | |   |**||  |[|
+      | |___|()||__|]|_,__
+     /[________]|  |[|( )/|
+    /___________________/ |
+    |__________  ______ | |
+    |          ||______|| |
+    |        ] ||______|| |
+    |          ||______|| |
+    |__________|________|/""")
     print(f"Then simply getting rid of old electronics can be pretty problematic, because they don't only end up in landfills, they also contain toxins which can leak into the soil causing a pollution and can kill wildlife. That's why we need to recycle our old electronics.{MessageContinue}")
     input()
 
@@ -340,9 +337,9 @@ V  \\
     print(f"I'm sure you've heard of this somewhere; 1.4 billion tons of food is wasted around the world every year. Well we can stop food waste by possibly growing our own food with a garden or some sort, because humans appreciate the hard work they've done and they wouldn't wanna throw away their own creation (well exception being if they've gone bad) {MessageContinue}")
     input()
 
-    bloopers = random.randint(1,10)
+    bloopers = random.randint(1,5)
 
-    if bloopers == "5": #joke purposes aha
+    if bloopers == 3: #joke purposes aha
       print("""
   ___.--------'``````:``````'--------.___
  (   |               :               |   )
@@ -357,6 +354,82 @@ V  \\
 
       print(f"Kexo: Whoops! that's the wrong image aha.. That's my sofa, anyways where was i? Oh, right. {MessageContinue}")
       input()
+
+      print(f"Kexo: Wait where did my script go? Benny? Where's the script for lesson 2? What do you mean you lost it? i thought we talked about this before when it happened to that other guy. Fine well i guess i have no choice but to do it on my own. {MessageContinue}")
+      input()
+
+      print("Kexo: I think we were supposed to talk about vegetables in this next scene, hold on..")
+      print("""
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⣤⣤⣤⣤⣄⣀⣾⣿⣿⣿⣿⣿⣿⣷⣀⣠⣤⣤⣤⣤⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀
+⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣄⠘⠋⣉⣀⣈⠙⢿⣿⣿⣁⡀⠀⠀⠀
+⠀⠀⣠⣶⣿⣿⡿⣿⣿⡿⠿⠿⣿⣿⣿⣿⣷⣾⣿⣿⣿⣷⣀⣿⣿⣿⣿⣦⡀⠀
+⠀⣼⣿⣿⣟⣁⣤⣤⣈⣴⣶⣦⡈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡷⠀
+⠀⠈⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠁⠀
+⠀⠀⠀⠈⠉⠛⢻⣿⣿⣿⣿⣿⣿⠋⠀⠙⣿⣿⣿⣿⣿⡟⠛⠛⠛⠋⠁⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⠛⠿⠿⠿⠋⠁⣴⣿⡆⠈⠙⠛⠛⠋⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠰⣶⣶⡀⠀⢸⣿⡇⠀⠀⢰⣾⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣧⠀⢸⣿⡇⠀⢀⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⡆⢸⣿⣿⠀⣼⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠋⠉""")
+
+      print(f"Kexo: Broccoli? Good enough, so as i was saying, eating vegetables are very good and has very many positives on your end. One thing to note however is to ALWAYS wash your vegetables clean using hot water to get rid of unsuspecting bacterias, those are not worth risking for. {MessageContinue}")
+      input()
+
+      print("""
+.------..------..------..------..------..------..------..------..------..------.
+|D.--. ||E.--. ||F.--. ||I.--. ||N.--. ||I.--. ||T.--. ||I.--. ||O.--. ||N.--. |
+| :/\\: || (\\/) || :(): || (\\/) || :(): || (\\/) || :/\\: || (\\/) || :/\\: || :(): |
+| (__) || :\\/: || ()() || :\\/: || ()() || :\\/: || (__) || :\\/: || :\\/: || ()() |
+| '--'D|| '--'E|| '--'F|| '--'I|| '--'N|| '--'I|| '--'T|| '--'I|| '--'O|| '--'N|
+`------'`------'`------'`------'`------'`------'`------'`------'`------'`------'""")
+      print(f"Kexo: Uhh do you know what the definiton of sustainable lifestyle is? Well it's basically action that we can do in our everyday lives to possibly effects the environment around is in a positive way! {MessageContinue}")
+      input()
+
+      print("Benny: psst! Try to stall as long as you could, i'll try to find the script")
+      print(f"Kexo: I don't know what to talk about i don't have my scri- And he's gone, okay. {MessageContinue}")
+      input()
+
+      print("""
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠖⠒⠢⣄⣀⡀⣀⣀⠀⡠⠔⠒⠒⢤⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⡇⠀⠀⠀⠁⠠⡋⠀⠀⠙⠦⠀⠀⠀⠀⣧⠤⣀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⡠⠖⠊⠑⠲⣄⣀⣠⠖⠘⠛⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⢸⠇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣸⣇⡀⠀⠀⠈⠁⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠋⠲⣄⠀⠀
+⠀⠀⠀⠀⣠⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠂⠀
+⠀⠀⠀⢀⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⢱⠀⠀⠀⠀⠀⠀⠀⠐⠺⡄⠀⠀
+⠀⡠⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡀⠀⢀⡼⠀⠀⠀⠀⠀⠀⠀⠀⢀⡇⠀⠀
+⢰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠈⠉⠁⡹⠀⠀⠀⣄⣀⡠⠟⢘⣯⣀⠀⠀
+⠸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡷⠺⡍⠒⣿⣀⣠⡀⠀⠀⠀⠀⠀⠈⠀⠈⡷⠀
+⠀⢸⠚⠉⠀⠀⠀⠀⠀⠀⠀⠀⢀⣶⠺⡁⠀⠙⠚⠀⠁⡏⢧⣀⡄⠀⠀⠀⠀⠐⠒⣇⠀
+⠀⠸⣄⣀⣰⠀⠀⠀⠀⠀⠀⠲⣟⣿⡦⣷⠀⠀⠀⠀⢠⠁⣸⣿⣷⢶⡆⢀⣤⡀⣠⡾⠁
+⠀⠀⠀⠀⠱⣀⠀⢀⡱⠄⠤⠜⠋⠻⡄⠀⠀⠀⠀⠀⣸⣴⡿⣏⠀⢀⣭⣁⣀⡽⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠸⠀⠀⠀⠀⠀⣿⡼⠁⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⠀⠀⠀⢿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣧⠀⠀⠀⠀⠸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠁⠀⠀⠀⠀⠈⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡴⠒⢋⣁⡀⠀⠀⠀⠀⠀⠘⠢⢄⣀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠁⠉⠙⠒⠤⣘⣗⠒⠒⠒⠚⠛⠃""")
+      print(f"Kexo: So, we can also try reforestration, by growing more trees we can restore habitat to flora and faunas and make the world more green. We can do this just by planting a seed like once a day near our area, though this process would definitely take years since the plant needs to grow as well. {MessageContinue}")
+      input()
+
+      print("Benny: FOUND IT!")
+      print(f"Kexo: Finally, give me that. {MessageContinue}")
+      input()
+
+      with open("SaveFile/KexoTrophy.text", "r") as f:
+        trophies = f.readlines()
+
+        boolean_check = []
+
+        for content in trophies:
+          boolean_check.append("The Bloopers Trophy" not in content)
+          
+        if False not in boolean_check:
+          with open("SaveFile/KexoTrophy.text", "a") as f:
+              f.write("The Bloopers Trophy, 'Benny! Did you hide the script!?'. Achieved by getting the easter egg on lesson 2.\n")
 
     print("""
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡶⠶⣦⣄⠀⠀⢀⣴⣿⣷⡄⠀⠀
@@ -388,7 +461,7 @@ V  \\
 ⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⡉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀""")
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁""")
     print(f"Fossil fuels cover about 84% of the world energy consumption. But they produce a huge amount of carbon dioxide when burned which helps build up greenhouse gasses around the earth. Well we can start using solar panels and produce energy that way through the heat of the sun. {MessageContinue}")
     input()
     

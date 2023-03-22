@@ -41,20 +41,20 @@ EXTRA NOTES
         KexoInput = input("> ").strip().lower()
         print()
 
-        if KexoInput == "quit":
+        if KexoInput == "quit" or KexoInput == "4": #placed up here to prevent any of the codes below from executing and instantly exits.
             break
 
         if KexoInput == "help":
             print(f"""Kexo: Hello {name}, these are the commands for everything related to this part of the program.
-    > create -> create another to do list
-    > finish -> if an assignment/activity is done
-    > all -> shows every list you have stored in the data
-    > (category name) -> shows that spesific type of category
-    > quit -> exits this section of the program
+    1. Create -> Create another to do list
+    2. Finish -> If an assignment/activity is done
+    3. All -> Shows every list you have stored in the data
+    > *Category Name* -> Shows that spesific type of category
+    4. Quit -> Exits this section of the program
 """)
             continue
 
-        elif KexoInput == "create":
+        elif KexoInput == "create" or KexoInput == "1":
             print("Format: To-do activity/assignment, category, date\nEx. English assignment, school, 20 January 2023")
             try:
                 Activity, Category, Due = input("> ").strip().lower().split(", ") #splitted into 3 so the program knows there's 3 data being inputted here
@@ -72,7 +72,7 @@ EXTRA NOTES
             print("Kexo: You have no lists yet! Make sure to create one right now! \n")
             continue
 
-        elif KexoInput == "finish":
+        elif KexoInput == "finish" or KexoInput == "2":
             ShowAllList(file_index)
 
             print("Kexo: Finish an activity/assignment by inputting their desired number.")
@@ -80,9 +80,7 @@ EXTRA NOTES
             try:
                 KexoListDelete = int(input("> "))
             except ValueError:
-                print(f"Kexo: Please enter a number that ranges from 0 - {len(all_list) - 1}")
-                
-                print()
+                print(f"Kexo: Please enter a number that ranges from 0 to {len(all_list) - 1} \n")
                 continue
 
             with open(FileList, "w") as f:
@@ -94,7 +92,7 @@ EXTRA NOTES
             print("Kexo: successfully deleted. \n")
             continue
             
-        elif KexoInput == "all":
+        elif KexoInput == "all" or KexoInput == "3":
             ShowAllList(file_index)
             
             print()

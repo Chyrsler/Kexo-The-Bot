@@ -9,7 +9,7 @@ red = "\033[0;31m"
 blue = "\033[0;34m"
 
 #File Scan
-Files = ["Kexo The Bot.py", "Kexo_JapanL.py", "Kexo_Lesson.py", "Kexo_Games.py"]
+Files = ["Kexo The Bot.py", "Kexo_JapanL.py", "Kexo_Lesson.py", "Kexo_Games.py", "Kexo_Recycle.py", "KexoList.py"]
 Exist = [f for f in Files if not os.path.isfile(f)]
 
 if Exist != []: #if 'Exist' is not an empty list (which means there's missing files.)
@@ -21,6 +21,7 @@ from Kexo_Games import KexoPOP, KexoRPG, KexoRPS, KexoStickFigure
 from Kexo_Lesson import LessonArt, LessonArt2
 from Kexo_JapanL import KexoJP
 from KexoList import KexoDoList
+from Kexo_Recycle import KexoMachine
 
 MessageContinue = f"{red}(press enter to continue){white}"
 Fact = []
@@ -66,8 +67,11 @@ $$/   $$/  $$$$$$$/ $$/   $$/  $$$$$$/        $$$$$$$/   $$$$$$/     $$$$/
       break
   
   New_Folder = os.mkdir("SaveFile")
-  with open("SaveFile/KexoIntroduction.text", "a") as f:
+  with open("SaveFile/KexoIntroduction.text", "w") as f:
     f.write(name)
+  
+  with open("SaveFile/KexoTrophy.text", "a") as f:
+    f.write("Trophy Of The Beginnings, 'Wow that's brand new!'. Achieved by getting to know Kexo.\n")
   
   print(f"Kexo: {name} huh? what a wonderful name! i'll start calling you that from now on!")
   print(f"Kexo: {name}, to get started, type in {red}'help'{white} below and see the list of my commands! \n")
@@ -98,9 +102,18 @@ while True:
    > Interesting
 3. Lesson
 4. Japanese
-5. To-Do
-6. Update
-7. Credits\n""") 
+5. Recycle
+   > Quest
+   > Inventory
+   > Combine
+6. To-Do
+   > Create
+   > Finish
+   > All
+   > *Category Name*
+7. Update
+8. Credits
+9. Trophies\n""") 
 
   elif "game" in KexoCmds or "1" in KexoCmds:    
     print("Kexo: There's 3 games that you can pick from! I will explain the rules once you choose! (enter a number from 1-3!!)")
@@ -135,7 +148,7 @@ while True:
   
       if not os.path.isfile("SaveFile/KexoFactBin.text"):
         with open("SaveFile/KexoFactBin.text", "w") as f: #creates this file if KexoFactBin.text wasn't found to prevent errors.
-          f.write("")
+          pass
   
       with open("SaveFile/KexoFactBin.text", "r") as f:
         FactBin = f.readlines() 
@@ -194,6 +207,7 @@ while True:
             f.write(f"{random_fact}\n")
 
       FactContinue = input("Continue to the next fact (y/n)? > ")
+
       if FactContinue == "n":
         FactRun = False
         
@@ -245,10 +259,13 @@ ___________________________________
 
     KexoJP(name)
 
-  elif "to-do" in KexoCmds or "5" in KexoCmds:
+  elif "recycle" in KexoCmds or "5" in KexoCmds:
+    KexoMachine(name)
+
+  elif "to-do" in KexoCmds or "6" in KexoCmds:
     KexoDoList(name)
     
-  elif "update" in KexoCmds or "6" in KexoCmds:
+  elif "update" in KexoCmds or "7" in KexoCmds:
     print(f"""Kexo: Hey {name}! Here are the recent changes made to the program:
 1. FILE DETECTION SYSTEM
    > Whenever the program is run, it'll scan if a file is missing or not. It will ask the user to download the program again from a given link and stop the program.
@@ -263,9 +280,14 @@ ___________________________________
 5. NEW COMMANDS! Full list:
    > Added 'To-do' List: Sort your list by category!
     -> NEW COMMANDS FOR THIS SECTION: create, finish, all.
-   > Added 'stickman' as a guessing word game! (Sustainable Lifestyle related)\n""")
+   > Added 'stickman' as a guessing word game! (Sustainable Lifestyle related)
+   > Added 'recycle', combine your garbage into something of a higher value!
+6. SCAVENGER TRASH HUNT!!
+   > Oh how dirty is this program! There's trashes left and right. Can you help Kexo pick up the trash? Kexo will tell you the location of one by claiming a quest in the recycle option!
+7. TROPHIES!
+   > Shiny trophies! gotta collect them all!!!\n""")
 
-  elif "credits" in KexoCmds or "7" in KexoCmds:
+  elif "credits" in KexoCmds or "8" in KexoCmds:
     print(f"""-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
 {'-- SCRIPTER --': >35}
 -> Sebastian, Christopher.
@@ -288,10 +310,36 @@ ___________________________________
 -> https://patorjk.com/software/taag
    > helped convert a bunch of text into ascii art
 -> https://www.asciiart.eu/
-   > quite literally 90% of the used ascii arts here
+   > quite literally 50% of the used ascii arts here
 -> YOU
    > for using this program ;)
 -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-\n""")
 
-  else: #no commands found
+  elif "trophies" in KexoCmds or "9" in KexoCmds:
+    with open("SaveFile/KexoTrophy.text", "r") as f:
+      Trophies = f.readlines()
+
+    print("----- YOUR TROPHY COLLECTION -----")
+    for Trophy in Trophies:
+      print(Trophy.strip('\n'))
+    
+    print()
+
+  if os.path.isfile("RecycleFit/KexoQuest.text"):
+    with open("RecycleFit/KexoQuest.text", "r+") as r:
+      Quest = r.readlines()
+
+      if Quest != []:
+        for content in Quest:
+          content = content.split(", ")
+        
+        if KexoCmds == content[1] or KexoCmds == content[2]:
+          print(f"Kexo: Congratulations! you found {content[0]}!")
+          
+          with open(f"RecycleFit/KexoGarbageCollect.text", "a") as f:
+            f.write(f"{content[0]}\n")
+          
+          r.truncate(0)
+
+else: #no commands found
     print("Kexo: Confused on what to do? type in 'help' to get a list of my commands!\n")
