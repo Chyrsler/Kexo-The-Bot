@@ -87,7 +87,7 @@ EXTRA NOTES
                 for lists in all_list:                
                     if file_index != KexoListDelete:
                         f.write(lists)
-                        file_index += 1
+                    file_index += 1
             
             print("Kexo: successfully deleted. \n")
             continue

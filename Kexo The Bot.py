@@ -1,19 +1,20 @@
-#Submission for Code Olympiad, made by Christopher Sebastian H.
-#I tried placing as many notes as possible on how certain code blocks work.
+#Submission for Code Olympiad. Semi Finals.
 
 import os, random
 
-#declaring the variables
+#declaring the color variables
 white = "\033[0;37m"
 red = "\033[0;31m"
 blue = "\033[0;34m"
+yellow = "\033[1;33m"
 
 #File Scan
-Files = ["Kexo The Bot.py", "Kexo_JapanL.py", "Kexo_Lesson.py", "Kexo_Games.py", "Kexo_Recycle.py", "KexoList.py"]
+Files = ["Kexo The Bot.py", "Kexo_JapanL.py", "Kexo_Lesson.py", "Kexo_Games.py", "Kexo_Recycle.py", "KexoList.py", "KexoCMDS.py"]
 Exist = [f for f in Files if not os.path.isfile(f)]
 
 if Exist != []: #if 'Exist' is not an empty list (which means there's missing files.)
-  print(f"Kexo: I have detected some missing files from your device. Please download it through this gibhut link: {blue}https://github.com/Chyrsler/Kexo-The-Bot.{white} Click on {red}code{white} and click on {red}download ZIP{white}. Alternatively, you can go to the file that you think is missing and download it from there.")
+  print(f"Kexo: I have detected that some missing files from your device. Please download it through this gibhut link: {blue}https://github.com/Chyrsler/Kexo-The-Bot.{white} Click on {red}code{white} and click on {red}download ZIP{white}. Alternatively, you can go to the file that you think is missing and download it from there.")
+  print("Missing Files:", *Exist)
   exit()
 
 #importing from other files
@@ -69,9 +70,12 @@ $$/   $$/  $$$$$$$/ $$/   $$/  $$$$$$/        $$$$$$$/   $$$$$$/     $$$$/
   New_Folder = os.mkdir("SaveFile")
   with open("SaveFile/KexoIntroduction.text", "w") as f:
     f.write(name)
-  
-  with open("SaveFile/KexoTrophy.text", "a") as f:
-    f.write("Trophy Of The Beginnings, 'Wow that's brand new!'. Achieved by getting to know Kexo.\n")
+
+  with open("SaveFile/KexoTrophy.text", "w") as f:
+    pass
+
+  from KexoCMDS import TrophyHandOut
+  TrophyHandOut("Trophy Of Beginnings", "The Trophy Of Beginnings, 'The Humbe Beginnings!'. Achieved by inputting your name.\n")
   
   print(f"Kexo: {name} huh? what a wonderful name! i'll start calling you that from now on!")
   print(f"Kexo: {name}, to get started, type in {red}'help'{white} below and see the list of my commands! \n")
@@ -106,6 +110,7 @@ while True:
    > Quest
    > Inventory
    > Combine
+   > Collection
 6. To-Do
    > Create
    > Finish
@@ -285,7 +290,9 @@ ___________________________________
 6. SCAVENGER TRASH HUNT!!
    > Oh how dirty is this program! There's trashes left and right. Can you help Kexo pick up the trash? Kexo will tell you the location of one by claiming a quest in the recycle option!
 7. TROPHIES!
-   > Shiny trophies! gotta collect them all!!!\n""")
+   > Shiny trophies! gotta collect them all!!!
+8. BUG FIXES 
+   > Literally had to run this over and over just looking for bugs, it took a while since this is my biggest project yet. (*cough* *cough* recycle command *cough*)\n""")
 
   elif "credits" in KexoCmds or "8" in KexoCmds:
     print(f"""-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
@@ -322,7 +329,12 @@ ___________________________________
     print("----- YOUR TROPHY COLLECTION -----")
     for Trophy in Trophies:
       print(Trophy.strip('\n'))
-    
+
+    if len(Trophies) == 12:
+      print()
+      print("---------- ALL MIGHTY ---------- \n")
+      print(f"{yellow}THE HUGE GOLDEN TROPHY{white}, 'Thank you so much, this program is essentially finished now!'. Achieved by getting all 12 trophies.")
+
     print()
 
   if os.path.isfile("RecycleFit/KexoQuest.text"):
@@ -333,7 +345,7 @@ ___________________________________
         for content in Quest:
           content = content.split(", ")
         
-        if KexoCmds == content[1] or KexoCmds == content[2]:
+        if content[1] in KexoCmds or content[2] in KexoCmds:
           print(f"Kexo: Congratulations! you found {content[0]}!")
           
           with open(f"RecycleFit/KexoGarbageCollect.text", "a") as f:

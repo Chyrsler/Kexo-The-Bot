@@ -1,4 +1,5 @@
 import random
+from KexoCMDS import TrophyHandOut
 
 def LessonArt(name, route, colour):
   white = "\033[0;37m"
@@ -419,17 +420,7 @@ V  \\
       print(f"Kexo: Finally, give me that. {MessageContinue}")
       input()
 
-      with open("SaveFile/KexoTrophy.text", "r") as f:
-        trophies = f.readlines()
-
-        boolean_check = []
-
-        for content in trophies:
-          boolean_check.append("The Bloopers Trophy" not in content)
-          
-        if False not in boolean_check:
-          with open("SaveFile/KexoTrophy.text", "a") as f:
-              f.write("The Bloopers Trophy, 'Benny! Did you hide the script!?'. Achieved by getting the easter egg on lesson 2.\n")
+      TrophyHandOut("Bloopers Trophy", "The Bloopers Trophy, 'Benny! Did you hide the script!?'. Achieved by getting the easter egg on lesson 2.\n")
 
     print("""
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡶⠶⣦⣄⠀⠀⢀⣴⣿⣷⡄⠀⠀

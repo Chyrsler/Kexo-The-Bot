@@ -1,8 +1,9 @@
 import random
+from KexoCMDS import TrophyHandOut
 
 def Word_Gen(Mode, name, Word_Type="clean"): #Romaji/Definition, clean is set as default. 
   #list of words
-  Words_sustainable = [["リサイクル (るさいくる)", "rusaikuru", "recycle"], ["しょくひん はいき もの", "shokuhin haiki mono", "food waste"], ["じぞく かのうな ライフスタイル (らいふすたいる)", "Jizoku kanouna raifusutairu", "sustainable lifestyle"], ["しょうえね", "shoune", "energy saving"], ["プラスチック (ぷらしちっく)", "purasuchikku", "plastic"], ["えんげい", "engei", "gardening"], ["けんこう たべる", "kenkou taberu", "eat healthy"], ["かんきょう に やさしい", "kankyou ni yasashii", "enviromentally friendly"], ["はいき もの ぜろ", "haiki mono zero", "zero waste"], ["ペットボトル (ぺっとぼとる)", "pettobotoru", "plastic bottle"], ["やさい", "yasai", "vegetables"], ["さい りよう かのう", "sai riyou kanou", "reusable"]]
+  Words_sustainable = [["ルサイクル (るさいくる)", "rusaikuru", "recycle"], ["しょくひん はいき もの", "shokuhin haiki mono", "food waste"], ["じぞく かのうな ライフスタイル (らいふすたいる)", "jizoku kanouna raifusutairu", "sustainable lifestyle"], ["しょうえね", "shouene", "energy saving"], ["プラスチック (ぷらしちっく)", "purasuchikku", "plastic"], ["えんげい", "engei", "gardening"], ["けんこう たべる", "kenkou taberu", "eat healthy"], ["かんきょう に やさしい", "kankyou ni yasashii", "enviromentally friendly"], ["はいき もの ぜろ", "haiki mono zero", "zero waste"], ["ペットボトル (ぺっとぼとる)", "pettobotoru", "plastic bottle"], ["やさい", "yasai", "vegetables"], ["さい りよう かのう", "sai riyou kanou", "reusable"]]
   Words_air = [["くうき", "kuuki", "air"], ["きれいな くうき", "kireina kuuki", "clean air"], ["たんそ", "tanso", "carbon"], ["ほうしゅつ", "houshutsu", "emission"], ["メタン (めたん)", "metan", "methane"], ["おんしつ こうか がす", "onshitsu kouka gasu", "greenhouse gas"], ["ガス (がす)", "gasu", "gas"], ["たいき おせん", "taiki osen", "air pollution"], ["にさんかたんそ", "nisankatanso", "carbondioxide"], ["すいそ", "suiso", "hydrogen"], ["ちきゅう おんだんか", "chikyuu ondanka", "global warming"], ["かせき ねんりょう", "kaseki nenryou", "fossil fuel"], ["ソーラーパネル (そおらあぱねる)", "sooraapaneru", "solar panel"], ["てんねん がす", "tennen gasu", "natural gas"], ["やま かじ", "yama kaji", "forest fire"], ["ちっそ", "chisso", "nitrogen"]]
   Correct = 0
 
@@ -47,6 +48,10 @@ def Word_Gen(Mode, name, Word_Type="clean"): #Romaji/Definition, clean is set as
     print()
 
   print(f"Kexo: Congratulations on beating with {Correct}/10 corrects, {name}!")
+  TrophyHandOut("Kimono Trophy", "The Kimono Trophy, 'Wow, now that's what i call stylish!'. Achieved by doing any exercise in Japanese.\n")
+
+  if Correct == 10:
+    TrophyHandOut("Golden Kimono Trophy", "The Golden Kimono Trophy, 'Wow now that's even more stylish!. Achieved by getting all 10 questions right in Japanese.\n")
 
 def KexoJP(name):
   #list of kana
@@ -140,6 +145,7 @@ def KexoJP(name):
         print()
         
     print(f"Kexo: Congratulations {name}, on completing the Hiragana tutorial! \n")
+    TrophyHandOut("Origami Trophy", "The Origami Trophy, 'It's folded like an origami but shaped like a trophy!'. Achieved by completing the tutorial in Japanese.\n")
             
   elif user == "2":    
     print("Kexo: Alright! looks like we're jumping straight to the material. There's currently 4 modes, each one has 10 questions you'll need to answer, goodluck!")
@@ -175,18 +181,6 @@ def KexoJP(name):
       input()
       
       Word_Gen("definition", name, "sustainable")
-
-    with open("SaveFile/KexoTrophy.text", "r") as f:
-      trophies = f.readlines()
-
-      boolean_check = []
-
-      for content in trophies:
-        boolean_check.append("The Origami Trophy" not in content)
-        
-      if False not in boolean_check:
-        with open("SaveFile/KexoTrophy.text", "a") as f:
-            f.write("The Origami Trophy, 'It's folded like an origami but shaped like a trophy!'. Achieved by doing any exercise in Japanese.\n")
             
   else:
     print("Kexo: Come again later! \n")

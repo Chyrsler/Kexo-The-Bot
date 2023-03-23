@@ -1,4 +1,5 @@
 import os, random
+from KexoCMDS import TrophyHandOut
 
 File_inv = "RecycleFit/KexoGarbageCollect.text"
 File_qst = "RecycleFit/KexoQuest.text"
@@ -140,6 +141,8 @@ def KexoMachine(name):
                         raise ValueError()
 
                     if TotalItem[ItemIndex] >= UserMultiplication:
+                        deletion = 0
+
                         InventoryInputted += UserMultiplication
                         CombinatedItems.append(f"{UserMultiplication}. {all_garbage[ItemIndex]}") #for later use.
                         
@@ -147,10 +150,14 @@ def KexoMachine(name):
                         with open(File_inv, "r") as f:
                             UserInv = f.readlines()
                     
-                        for i in range(UserMultiplication):
-                            with open(File_inv, "w") as f:
-                                for Inv in UserInv:
-                                    if all_garbage[ItemIndex] != Inv.strip("\n"):
+                        with open(File_inv, "w") as f:
+                            for Inv in UserInv:
+                                if all_garbage[ItemIndex] != Inv.strip("\n"):
+                                    f.write(Inv)
+                                else:
+                                    deletion += 1
+
+                                    if deletion > UserMultiplication:
                                         f.write(Inv)
                             
                     print()
@@ -170,22 +177,10 @@ def KexoMachine(name):
                     f.write(f"{prize}\n")
 
                 print(f"Kexo: {prize}! Congratulations, it has been added to your collection!")
+                TrophyHandOut("Garbage Trophy", "The Garbage Trophy, 'Hey look that huge garbage can spat out a trophy!'. Achieved by combinining three items for the first time.\n")
 
         elif KexoInput == "collection" or KexoInput == "4":
             KexoInvRec(File_clt, ListOfItems=["golden chair", "golden phone", "golden table", "golden piano", "golden computer", "golden plug", "golden shirt"])
 
             if 0 not in TotalItem:
-                with open("SaveFile/KexoTrophy.text", "r") as f:
-                    trophies = f.readlines()
-
-                    boolean_check = []
-
-                    for content in trophies:
-                        boolean_check.append("The Golden Trophy" not in content)
-                        
-                        if False not in boolean_check:
-                            print()
-                            print("Kexo: I see that you have gotten every single item, psst i'm here to give you a reward: 'THE GOLDEN TROPHY'. Type in 'trophies' or '9' in the main menu to view your current trophies.")
-
-                            with open("SaveFile/KexoTrophy.text", "a") as f:
-                                f.write("The Golden Trophy, 'ooooh shiny..'. Achieved by getting all golden items.\n")
+                TrophyHandOut("Goldenest Trophy", "The Goldenest Trophy, 'Mirror mirror on the wall, who's the golden-ness of them all?'. Achieved by getting all golden collectibles.\n")

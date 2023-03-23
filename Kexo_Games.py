@@ -1,26 +1,14 @@
 import random
+from KexoCMDS import TrophyHandOut
 
 white = "\033[0;37m"
 red = "\033[0;31m"
 blue = "\033[0;34m"
 cyan = "\033[0;94m"
 
-def TrophyHandOut(TypeTrophy, Description):
-   with open("SaveFile/KexoTrophy.text", "r") as f:
-    trophies = f.readlines()
-
-    boolean_check = []
-
-    for content in trophies:
-      boolean_check.append(TypeTrophy not in content)
-      
-    if False not in boolean_check:
-      with open("SaveFile/KexoTrophy.text", "a") as f:
-          f.write(Description)
-
 def KexoPOP():
   Kexo_Air = [["the 2 particle that fills up most of the atmosphere is ________", "Nitrogen and Hydrogen", "Carbondioxide and Nitrogen", "Hydrogen and Oxygen", "Oxygen and Nitrogen"], ["one of the major bad effects of polluted air is ________", "global warming becomes a major concern", "people can live a healthy life", "people can make a quick buck out of it", "a downspike in disease cases"], ["25% of methane gas comes from ________", "enteric fermentation", "landfills", "manure management", "coal mining"], ["humans will experience ________ when breathing in small amounts of carbondioxide.", "little to no toxicological effect", "increased/decreased respiratory rate", "impaired conciousness", "convulsions"], ["photosynthesis is where carbondioxide will experience ________ and release the oxygen gas.", "reduction", "morphology", "oxidation", "photosynthesis"], ["one of the effort to reduce air pollution is by ________", "reduce wildfire", "use plastic bags", "using an air conditioner instead of a fan", "using a private vehicle"], ["the glass house effect is mainly caused by ________", "water vapour, carbondioxide, nitrous oxide", "water vapour, nitrogen, oxygen", "carbondioxide, nitrous oxide, oxygen", "oxygen, nitrogen, carbondioxide"], ["the greenhouse effect says that ________ due to greenhouse gasses such as carbondioxide and methane gas.", "some of the heat is reflected back to earth", "all of the heat is reflected to space", "all of the heat is reflected back to earth", "all of the heat is trapped in earth", "there are so many positives in breathing in clean air, but the exact opposite effect if you breathe in polluted air is ________", "decrease in sleep quality, less productivity at work, shorter life", "less productivity at work, shorter life, stable environment", "weaker immune system", "productivity at work, unstable environment", "longer life, improving sleep quality, reduction of sick and leave, and greater comfort in general"], ["carbondioxide's mass production comes from ________", "fossil fuels", "land use", "industrial processes", "other raw materials"]] #all the correct answers will be placed at index one (to ease the coding process), though it'll be randomized when printed out to the user.
-  Kexo_Sustainable = [["To sustain a stable lifestyle we'll need to ________", "reduce meat-eating", "not throw plastics to our ocean", "waste food", "eat unhealthy"], ["approximately ________ million plastics are produced every year.", "380", "300", "460", "600"], ["________ percent of all produced plastic every year are single use.", "50", "30", "20", "40"], ["when we throw out old electronics, they can kill wildlife because ________", "they contain toxins that can leak", "the animals think that it's food and they'll eat it", "they don't really harm or kill wildlife so it's none of them", "they produce carbondioxide which can ruin the surrounding environment"], ["There are many ways to stop food wasting but not like ________", "throwing your newly fresh mcdonalds out the trash", "start your own garden", "start donating food to other people", "recycle old electronics"], ["let's say you love meat, but you heard that the meat industry is very destructive. So you in this situation will need to ________", "reduce eating it", "TURN VEGAN!!", "eat it artificially", "stop eating it fully"], ["so you don't have to keep renewing your product, you'll need to check it's durability by ________", "checking what brand made that product", "smashing it as hard as you can to the ground", "ask the store's clerk on when it was made", "check the price tag of the item, the more expensive the more durable"], ["There are a lot of eco-friendly products, such as ________", "coffee cups", "plastic cups", "helium balloons", "all plastic-related items basically"], ["starting our own garden reduces food waste beecause ________", "we tend to not throw away food that is grown by ourselves", "they don't really reduce food waste because we're only making more food", "we know how we process the food", "we know whether they're clean or not because we'll be the one growing them"], ["brands that prioritize on producing energy-saving appliances are called ________", "Energy Star appliances", "Samsung", "ASKO", "Bosch"], ["Sustainable Lifestyle is ________", "a way to get reduce of one's carbon footprint", "a way to keep yourself healthy", "a way to adapt to your surroundings", "a way to stay unhealthy"]]
+  Kexo_Sustainable = [["To sustain a stable lifestyle we'll need to ________", "reduce meat-eating", "throw plastics to our ocean", "waste food", "eat unhealthy"], ["approximately ________ million plastics are produced every year.", "380", "300", "460", "600"], ["________ percent of all produced plastic every year are single use.", "50", "30", "20", "40"], ["when we throw out old electronics, they can kill wildlife because ________", "they contain toxins that can leak", "the animals think that it's food and they'll eat it", "they don't really harm or kill wildlife so it's none of them", "they produce carbondioxide which can ruin the surrounding environment"], ["There are many ways to stop food wasting but not like ________", "throwing your newly fresh mcdonalds out the trash", "start your own garden", "start donating food to other people", "recycle old electronics"], ["let's say you love meat, but you heard that the meat industry is very destructive. So you in this situation will need to ________", "reduce eating it", "TURN VEGAN!!", "eat it artificially", "stop eating it fully"], ["so you don't have to keep renewing your product, you'll need to check it's durability by ________", "checking what brand made that product", "smashing it as hard as you can to the ground", "ask the store's clerk on when it was made", "check the price tag of the item, the more expensive the more durable"], ["There are a lot of eco-friendly products, such as ________", "coffee cups", "plastic cups", "helium balloons", "all plastic-related items basically"], ["starting our own garden reduces food waste beecause ________", "we tend to not throw away food that is grown by ourselves", "they don't really reduce food waste because we're only making more food", "we know how we process the food", "we know whether they're clean or not because we'll be the one growing them"], ["brands that prioritize on producing energy-saving appliances are called ________", "Energy Star appliances", "Samsung", "ASKO", "Bosch"], ["Sustainable Lifestyle is ________", "a way to reduce of one's carbon footprint", "a way to keep yourself healthy", "a way to adapt to your surroundings", "a way to stay unhealthy"]]
   Used_Numbers = [] #Indexes that are used will go here to prevent doubles.
   Correct = 0 #how many questions have been answered correctly.
   Points = 0 #how many points have been awarded.
@@ -71,7 +59,11 @@ def KexoPOP():
 
       TrophyHandOut("GameShow Trophy", "The GameShow Trophy, 'Regardless on your performance, you'll get this shiny trophy!'. Achieved by completing a PopQuiz session.\n")
       
+      if Points == 100:
+        TrophyHandOut("Smart Trophy", "The Smart Trophy, 'Wow this thing is smart, whatever that means!. Achieved  by getting all questions correct in PopQuiz.\n")
+      
       input("Press enter to quit")
+      print()
       break
       
     Kexo_Question.pop(Random_Question)
@@ -181,7 +173,7 @@ def KexoRPS():
 
 def KexoStickFigure():
   print("Kexo: Here's the rule: you'll need to guess your way to victory. Each round the word is different and it's related to sustainable lifestyle. Don't worry! you have infinite lives for the purpose of learning new words!")
-  KexoListWord = [["recycle", "Ah yes, the process to repurpose your old junk and use it to make newly produce materials."], ["garden", "Building your own garden may take time, but it can be worth the wait!"], ["reforestration", "Come on people stop killing the earth's resources for your own greedy need, is it that hard?"], ["ecofriendly", "Environmentally friendly, nothing to say about this one really pretty self explanatory."], ["reuse", "Essentially like recycling, there's not much of a difference."], ["protect", "Protect as in protect the flaura and fauna of the earth."], ["sustainable", "Sebastian was really thinking hard about putting this one in, alas he was forced to. Atleast it has some kind of connection with sustainable lifestyle, eh.. word-wise."]]
+  KexoListWord = [["recycle", "Ah yes, the process to repurpose your old junk and use it to make newly produce materials."], ["garden", "Building your own garden may take time, but it can be worth the wait!"], ["reforestration", "Come on people stop killing the earth's resources for your own greedy need, is it that hard?"], ["ecofriendly", "Environmentally friendly, nothing to say about this one really pretty self explanatory."], ["reuse", "Essentially like recycling, there's not much of a difference."], ["protect", "Protect as in protect the flaura and fauna of the earth."], ["sustainable", "Sebastian was really thinking hard about putting this one in, alas he was forced to. Atleast it has some kind of connection with sustainable lifestyle, eh.. word-wise."], ["reduce", "Just thought of the 3R's for some reason."]]
   
   KexoIndex = random.randint(0, len(KexoListWord) - 1)
   KexoChosenWord = KexoListWord[KexoIndex][0]
@@ -198,6 +190,8 @@ def KexoStickFigure():
     KexoAnonymousChar[i] = "_"
   
   while True:
+    WrongChar = len(BlatantlyWrong)
+
     for characters in KexoAnonymousChar:
       print(characters, end=" ")
 
@@ -220,7 +214,12 @@ def KexoStickFigure():
 
     if KexoAnonymousChar == GuessWord:
       print(f"Kexo: {KexoWordDialogue}")
-      print(f"Kexo: Good job! you've won the game! You've entered {len(BlatantlyWrong)} wrong characters in total!\n")
+      print(f"Kexo: Good job! you've won the game! You've entered {WrongChar} wrong characters in total!\n")
 
-      TrophyHandOut("The Stick Trophy", "The Stick Trophy, 'Quite literally made out of sticks'. Achieved by correctly guessing the word in stickman.\n")
+      if WrongChar <= 5:
+        TrophyHandOut("Stick Trophy", "The Stick Trophy, 'Quite literally made out of sticks'. Achieved by correctly guessing the word in stickman in under 6 wrong characters.\n")
+
+        if WrongChar == 0:
+          TrophyHandOut("Golden Stick Trophy", "The Golden Stick Trophy, 'Where in the world did you find these golden sticks!?. Achieved by correctly guessing the word without entering any wrong characters.\n")
+
       break
