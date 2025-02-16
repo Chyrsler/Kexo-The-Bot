@@ -1,3 +1,5 @@
+import os
+
 #declarating file variable
 FileList = "SaveFile/KexoToList.text"
 
